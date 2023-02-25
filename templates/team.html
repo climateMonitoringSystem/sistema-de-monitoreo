@@ -1,0 +1,77 @@
+{% extends "index.html" %} {% block content %}
+<main class="container mb-4 px-3">
+    <h1>Developer Team</h1>
+    <div class="">
+        <div class="row">
+            <div class="col col-md-3">
+                <div
+                    class="card bg-dark"
+                    style="width: 20rem; border-block-color: white"
+                >
+                    <img
+                        src="{{url_for ('static', filename='images/author1.jpg')}}"
+                        height="340"
+                        class="card-img-top"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Geiler Hipia</h5>
+                        <p href="#" class="link-secondary">@email.com</p>
+                        <p href="#" class="link-secondary">+57000000000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div
+                    class="card bg-dark"
+                    style="width: 20rem; border-block-color: white"
+                >
+                    <img
+                        src="{{url_for ('static', filename='images/author2.jpg')}}"
+                        height="340"
+                        class="card-img-top"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Simon Zuluaga</h5>
+                        <p href="#" class="link-secondary">@email.com</p>
+                        <p href="#" class="link-secondary">+57000000000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div
+                    class="card bg-dark"
+                    style="width: 20rem; border-block-color: white"
+                >
+                    <img
+                        src="{{url_for ('static', filename='images/author3.jpg')}}"
+                        height="340"
+                        class="card-img-top"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Alejandro Beltran</h5>
+                        <p href="#" class="link-secondary">@email.com</p>
+                        <p href="#" class="link-secondary">+57000000000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <div
+                    class="card bg-dark"
+                    style="width: 20rem; border-block-color: white"
+                >
+                    <img
+                        src="{{url_for ('static', filename='images/author4.jpg')}}"
+                        height="340"
+                        class="card-img-top"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Paul Martinez</h5>
+                        <p href="#" class="link-secondary">@email.com</p>
+                        <p href="#" class="link-secondary">+57000000000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<main class="px-3">
+    <h1>Sistema de Monitorio del Clima en un Vivero</h1>
+    <hr>
+    <p class="lead">Sistema de monitoreo en tiempo real. Este sistema cuenta con sensores de temperatura, humedad y luz.</p>
+    <p class="lead">Cada 2 segundos se actualizan los datos tomados por el dispositivo y se envia al servidor.</p>
+    <div class="row">
+        <div class="col">
+            <h2>Temperatura</h2>
+            <h1 id="temperature" style="color: #247dff;">{{temperature}}°C</h1>
+        </div>
+        <div class="col">
+            <h2>Humedad</h2>
+            <h1 id="humidity" style="color: #60bb60;">{{humidity}}%</h1>
+        </div>
+        <div class="col">
+            <h2>Luz</h2>
+            <h1 id="light" style="color:#c3c32e;">{{light}}</h1>
+        </div>
+    </div>
+</main>
+
+<script>
+    function update() {
+        $.ajax({
+            type: 'POST',
+            url: '/update'
+        }).done(function (data) {
+
+            var temperature = data["temperature"];
+            var humidity = data["humidity"];
+            var light = data["light"];
+
+            var temp = document.getElementById("temperature");
+            var hum = document.getElementById("humidity");
+            var ligh = document.getElementById("light");
+
+            temp.textContent = temperature + "°C";
+            hum.textContent = humidity + "%";
+            ligh.textContent = light;
+        });
+    }
+
+    setInterval(update, 2000);
+</script>
+{% endblock %}
